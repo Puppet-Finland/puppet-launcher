@@ -1,0 +1,12 @@
+{
+  "name": "puppetfinland-shortcut",
+  "version": "0.1.0",
+  "author": "Puppet-Finland team",
+  "license": "BSD license",
+  "summary": "Setup desktop (shortcut) files",
+  "source": "https://github.com/Puppet-Finland/shortcut.git",
+  "project_page": "https://github.com/Puppet-Finland/shortcut",
+  "dependencies": [
+    { "name": "puppetfinland/os", "version_requirement": ">= 0.5.3" },
+  ]
+}
