@@ -7,6 +7,6 @@
   "source": "https://github.com/Puppet-Finland/shortcut.git",
   "project_page": "https://github.com/Puppet-Finland/shortcut",
   "dependencies": [
-    { "name": "puppetfinland/os", "version_requirement": ">= 0.5.3" },
+    { "name": "puppetfinland/os", "version_requirement": ">= 0.5.3" }
   ]
 }
