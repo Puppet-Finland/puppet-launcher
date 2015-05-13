@@ -15,8 +15,8 @@ See [metadata.json](metadata.json).
 
 This module has been tested on
 
-* Ubuntu 14.04 64-bit
-* Debian 8 64-bit
+* Ubuntu 14.04
+* Debian 8
 
 The following operating systems should work out of the box or with small 
 modifications:

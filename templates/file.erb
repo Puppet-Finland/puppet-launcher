@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=<%= title %>
-Comment=<%= comment %>
+Comment=<% if @comment %><%= comment %><% end -%>
+
 Exec=<%= command %>
 Icon=<%= icon %>
 Terminal=<%= terminal %>

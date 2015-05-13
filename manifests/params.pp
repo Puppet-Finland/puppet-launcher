@@ -5,6 +5,6 @@
 #
 class shortcut::params {
 
-    include os::params
+    include ::os::params
 
 }
