@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=<%= title %>
-Comment=<% if @comment %><%= comment %><% end -%>
+Name=<%= @title %>
+Comment=<% if @comment %><%= @comment %><% end -%>
 
-Exec=<%= command %>
-Icon=<%= icon %>
-Terminal=<%= terminal %>
-Type=<%= type %>
+Exec=<%= @command %>
+Icon=<%= @icon %>
+Terminal=<%= @terminal %>
+Type=<%= @type %>
 Version=1.0
 Encoding=UTF-8
