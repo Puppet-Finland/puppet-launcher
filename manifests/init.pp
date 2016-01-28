@@ -6,7 +6,7 @@
 #
 # [*manage*]
 #   Whether to manage desktop files using this class or not. Valid values are 
-#   'yes' (default) and 'no'.
+#   true (default) and false.
 # [*files*]
 #   A hash of shortcut::file resources to realize.
 #
@@ -20,15 +20,16 @@
 #
 class shortcut
 (
-    $manage = 'yes',
+    $manage = true,
     $files = {}
 
 ) inherits shortcut::params
 {
 
-if $manage == 'yes' {
+    validate_bool($manage)
+    validate_hash($files)
 
-    create_resources('shortcut::file', $files)
-
-}
+    if $manage {
+        create_resources('shortcut::file', $files)
+    }
 }

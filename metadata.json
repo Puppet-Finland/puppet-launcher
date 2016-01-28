@@ -1,6 +1,6 @@
 {
   "name": "puppetfinland-shortcut",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "author": "Puppet-Finland team",
   "license": "BSD license",
   "summary": "Setup desktop (shortcut) files",
