@@ -38,6 +38,19 @@ define shortcut::file
 )
 {
 
+    $applications_dir = "${::os::params::home}/${user}/.local/share/applications"
+
+    # This is somewhat nasty technique, but creating a deep directory hierarchy
+    # that has correct permissions using the File resource would be rather
+    # challenging.
+    exec { "shortcut-create-${title}":
+        command => "mkdir -p ${applications_dir}",
+        user    => $user,
+        path    => [ '/bin', '/usr/bin'],
+        creates => $applications_dir,
+        require => User[$user],
+    }
+
     file { $filename:
         ensure  => $ensure,
         name    => "${::os::params::home}/${user}/.local/share/applications/${filename}.desktop",
@@ -45,6 +58,6 @@ define shortcut::file
         owner   => $::os::params::adminuser,
         group   => $::os::params::admingroup,
         mode    => '0644',
+        require => Exec["shortcut-create-${title}"],
     }
-
 }
