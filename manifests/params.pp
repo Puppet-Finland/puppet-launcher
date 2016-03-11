@@ -1,9 +1,9 @@
 #
-# == Class: shortcut::params
+# == Class: launcher::params
 #
 # Define some parameters based on the operating system
 #
-class shortcut::params {
+class launcher::params {
 
     include ::os::params
 

@@ -1,5 +1,5 @@
 #
-# == Define: shortcut::file
+# == Define: launcher::file
 #
 # Setup a shortcut file
 #
@@ -24,7 +24,7 @@
 # [*type*]
 #   Type of the desktop file. Defaults to 'Application'.
 #
-define shortcut::file
+define launcher::file
 (
     $user,
     $command,
@@ -43,7 +43,7 @@ define shortcut::file
     # This is somewhat nasty technique, but creating a deep directory hierarchy
     # that has correct permissions using the File resource would be rather
     # challenging.
-    exec { "shortcut-create-${title}":
+    exec { "launcher-create-${title}":
         command => "mkdir -p ${applications_dir}",
         user    => $user,
         path    => [ '/bin', '/usr/bin'],
@@ -54,10 +54,10 @@ define shortcut::file
     file { $filename:
         ensure  => $ensure,
         name    => "${::os::params::home}/${user}/.local/share/applications/${filename}.desktop",
-        content => template('shortcut/file.erb'),
+        content => template('launcher/file.erb'),
         owner   => $::os::params::adminuser,
         group   => $::os::params::admingroup,
         mode    => '0644',
-        require => Exec["shortcut-create-${title}"],
+        require => Exec["launcher-create-${title}"],
     }
 }

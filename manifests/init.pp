@@ -1,4 +1,4 @@
-# == Class: shortcut
+# == Class: launcher
 #
 # This class sets up desktop (shortcut) files
 #
@@ -18,18 +18,18 @@
 #
 # BSD-license. See file LICENSE for details.
 #
-class shortcut
+class launcher
 (
     $manage = true,
     $files = {}
 
-) inherits shortcut::params
+) inherits launcher::params
 {
 
     validate_bool($manage)
     validate_hash($files)
 
     if $manage {
-        create_resources('shortcut::file', $files)
+        create_resources('launcher::file', $files)
     }
 }
